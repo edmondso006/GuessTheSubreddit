@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import {Card, CardContent, CardMedia, Typography} from '@material-ui/core';
 import Image from './test.png';
+import './pictureComponent.css';
+import { GetSubreddit } from './../providers/provider';
 
 class PictureCompoent extends Component{
-
+    constructor(props){
+        super(props);
+        
+    }
     render(){
+        console.log(GetSubreddit());
         return(
             <div className="iamgeCard">
                 <Card>

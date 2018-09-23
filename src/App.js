@@ -7,8 +7,13 @@ import NavBar from './components/navbar';
 import PictureComponent from './components/pictureComponent';
 import OptionComponent from './components/optionComponent';
 
-
+import { GetSubreddit } from './providers/provider';
 class App extends Component {
+
+  constructor(props){
+    super(props);
+    GetSubreddit();
+  }
   render() {
     return (
       <div className="App">
