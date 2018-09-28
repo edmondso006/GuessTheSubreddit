@@ -6,10 +6,6 @@ import Grid from '@material-ui/core/Grid';
 import NavBar from './components/navbar';
 import PictureComponent from './components/pictureComponent';
 import OptionComponent from './components/optionComponent';
-import TestComponent from './components/testComponent';
-import { GetRandomImageURL } from './providers/provider';
-
-
 
 
 class App extends Component {
