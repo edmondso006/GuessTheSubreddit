@@ -9,22 +9,31 @@ export function fetchData(){
 
     console.log("Called");
     return(dispatch) => {
-        return axios.get(`https://www.reddit.com/r/${subreddits[ran]}.json`)
+        return axios.get(`https://www.reddit.com/r/${subreddits[ran]}/random.json`)
         .then((res) => {
-            getRandomImage(dispatch, res.data.data.children);
+            console.log(res);
+            getRandomImage(dispatch, res.data[0].data.children);
             //dispatch(GetImageFromSub(res.data.data.childeren));
         })
     }
 }
 
-
+//TODO: Add gif support
 export function getRandomImage(dispatch, posts){
     for(let i=0; i < posts.length; i++){
         if(posts[i].data.domain === 'i.redd.it' || posts[i].data.domain === 'i.imgur.com') {
             let imageURL = posts[i].data.url;
-            console.log(imageURL);
-            dispatch(GetImageFromSub(imageURL));
+            if(imageURL.split()[1] ==='gifv'){
+                break;
+            }else{
+                console.log(imageURL);
+                dispatch(GetImageFromSub(imageURL));
+            }
+            
             break;
+        }else {
+            console.log("recursion");
+            fetchData();
         }
     }
 }
