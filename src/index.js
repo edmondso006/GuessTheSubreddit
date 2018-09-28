@@ -4,10 +4,12 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose } from 'redux'
-import subredditReducer  from './redux/reducers';
+import reducers from './reducers/reducers';
 
-const store = compose(window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)(subredditReducer)
+
+const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(<Provider store={store}><App /></Provider>
 

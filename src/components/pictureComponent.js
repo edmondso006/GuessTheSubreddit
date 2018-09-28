@@ -2,16 +2,13 @@ import React, { Component } from 'react';
 import {Card, CardContent, CardMedia, Typography} from '@material-ui/core';
 import Image from './test.png';
 import './pictureComponent.css';
-import { GetRandomImageURL } from './../providers/provider';
 
-class PictureCompoent extends Component{
+class PictureComponent extends Component{
     constructor(props){
         super(props);
-        
     }
+
     render(){
-        let image = GetRandomImageURL();
-        console.log(image);
         
         return(
             <div className="iamgeCard">
@@ -22,7 +19,7 @@ class PictureCompoent extends Component{
                             component="img"
                             className="image"
                             height="350"
-                            image={Image}
+                            image={this.props.imageUrl}
                             title="image"
                         />
                         <Typography  variant="headline" component="h2">
@@ -37,4 +34,4 @@ class PictureCompoent extends Component{
 }
 
 
-export default PictureCompoent;
+export default PictureComponent;
