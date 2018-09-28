@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Card, CardContent, CardMedia, Typography} from '@material-ui/core';
 import Image from './test.png';
 import './pictureComponent.css';
-import { GetSubreddit } from './../providers/provider';
+import { GetRandomImageURL } from './../providers/provider';
 
 class PictureCompoent extends Component{
     constructor(props){
@@ -10,7 +10,9 @@ class PictureCompoent extends Component{
         
     }
     render(){
-        console.log(GetSubreddit());
+        let image = GetRandomImageURL();
+        console.log(image);
+        
         return(
             <div className="iamgeCard">
                 <Card>

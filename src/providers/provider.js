@@ -1,24 +1,25 @@
 import axios from 'axios';
 
 const subreddits = ['aww', 'MadeMeSmile', 'pics', 'wellthatsucks','memes','gaming'];
-
-export function GetSubreddit() {
+let url;
+export function GetRandomImageURL() {
     let ranSub = randomNumber();
-    axios.get(`https://www.reddit.com/r/${subreddits[ranSub]}/random.json`).then( (res) => {
-        console.log(res);
-        
+    return axios.get(`https://www.reddit.com/r/${subreddits[ranSub]}/random.json`);
+}
+
+
+
+function parsePromise(res){
+    return new Promise((resolve, reject) => {
         if(res.data[0].data.children[0].data.domain === 'i.redd.it' || res.data[0].data.children[0].data.domain === 'i.imgur.com'){
             let imageUrl = res.data[0].data.children[0].data.url;
-            console.log(imageUrl);
-            return imageUrl;
-            
+            console.log('PROVIDER: IN IF: ' + imageUrl);
+            resolve(imageUrl);
         }else{
-            GetSubreddit();
-        }
-        
-    }).catch( (err) => {
-        console.log(err);
-    });
+            GetRandomImageURL();
+            
+        };
+    })
 }
 
 function randomNumber(){

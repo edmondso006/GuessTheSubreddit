@@ -6,19 +6,22 @@ import Grid from '@material-ui/core/Grid';
 import NavBar from './components/navbar';
 import PictureComponent from './components/pictureComponent';
 import OptionComponent from './components/optionComponent';
+import TestComponent from './components/testComponent';
+import { GetRandomImageURL } from './providers/provider';
 
-import { GetSubreddit } from './providers/provider';
+
+
+
 class App extends Component {
 
   constructor(props){
     super(props);
-    GetSubreddit();
   }
   render() {
     return (
       <div className="App">
         <NavBar />
-
+        <TestComponent />
         <Grid container spacing={8}>
           <Grid item xs={3}>
           </Grid>
