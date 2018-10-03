@@ -5,12 +5,13 @@ import './pictureComponent.css';
 class PictureComponent extends Component{
     constructor(props){
         super(props);
+
     }
 
     render(){
         
         return(
-            <div className="iamgeCard">
+            <div className="imageCard">
                 <Card>
                     <CardContent>
 

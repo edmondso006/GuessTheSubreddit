@@ -1,8 +1,10 @@
 import axios from 'axios';
 
-let subreddits = ['aww', 'MadeMeSmile', 'pics', 'wellthatsucks','memes','gaming'];
 export const GET_IMAGE_FROM_SUB = 'GET_IMAGE_FROM_SUB';
 export const GET_IMAGE_FROM_SUB_FAIL = 'GET_IMAGE_FROM_SUB_FAIL';
+export const GET_CORRECT_SUB = 'GET_CORRECT_SUB';
+
+let subreddits = ['aww', 'MadeMeSmile', 'pics', 'wellthatsucks','memes','gaming'];
 
 export function fetchData(){
     let ran = randomNumber();
@@ -12,10 +14,12 @@ export function fetchData(){
         return axios.get(`https://www.reddit.com/r/${subreddits[ran]}/random.json`)
         .then((res) => {
             let post = res.data[0].data.children[0].data;
+            console.log(post);
             if(post.domain === 'i.redd.it' || post.domain === 'i.imgur.com') {
                 let imageURL = post.url;
                 if(imageURL.split(".")[3] !== 'gifv'){
-                    dispatch(GetImage(imageURL))
+                    dispatch(GetImage(imageURL));
+                    dispatch(GetCorrectSub(post.subreddit));
                 }else{
                     return dispatch(fetchData());
                 }
@@ -33,6 +37,15 @@ export function GetImage(url){
         imageUrl: url
     }
 }
+
+export function GetCorrectSub(subredit){
+    return{
+        type: 'GET_CORRECT_SUB',
+        correctSub: subredit
+    }
+}
+
+
 
 export function GetImageFromSubFail(error){
     return{

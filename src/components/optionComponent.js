@@ -4,13 +4,17 @@ import './optionComponent.css';
 
 class OptionComponent extends Component {
 
+    constructor(props){
+        super(props);
+    }
+
     render(){
         return(
             <div>
                 <Card>
                     <CardContent>
                         <Typography variant="headline" component="h2" className="optionText">
-                            Option
+                            {this.props.correctSub}
                         </Typography>
                     </CardContent>
 
