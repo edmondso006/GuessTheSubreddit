@@ -1,7 +1,8 @@
 import { GET_IMAGE_FROM_SUB } from '../actions/actions';
+import { GET_IMAGE_FROM_SUB_FAIL } from '../actions/actions';
 
 const initialState = {
-  imageUrl: ''
+  imageUrl: undefined
 }
 
 export default function subredditReducer(state=initialState, action) {
@@ -12,6 +13,13 @@ export default function subredditReducer(state=initialState, action) {
         ...state,
         imageUrl: action.imageUrl,
       };
+
+    case GET_IMAGE_FROM_SUB_FAIL:
+      return{
+        ...state,
+        imageUrl: undefined
+      }
+      
 
     //Always have a default
     default:

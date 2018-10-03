@@ -15,9 +15,8 @@ class SubRedditCon extends React.Component{
     render(){
         
         return(
-            // <SubRedditComp res={this.props.res} handleClick={this.props.getSubReddit}></SubRedditComp>
             <div>
-                <PictureComponent imageUrl={this.props.imageUrl === undefined ? '' : this.props.imageUrl} />
+                <PictureComponent imageUrl={this.props.imageUrl === undefined  ? '' : this.props.imageUrl} />
             </div>
         )
     }
