@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Card, CardContent, CardMedia, Typography} from '@material-ui/core';
-import Image from './test.png';
 import './pictureComponent.css';
 
 class PictureComponent extends Component{

@@ -3,7 +3,6 @@ import PictureComponent from './../components/pictureComponent';
 import { connect } from 'react-redux';
 import * as actionCreators from './../actions/actions';
 
-
 class SubRedditCon extends React.Component{
 
     constructor(props){
