@@ -40,6 +40,14 @@ class SubRedditCon extends React.Component{
 
     }
 
+    handleClick = (guess) => {
+        if(guess === this.props.correctSub){
+            alert('CORRECT');
+        }else {
+            alert('WRONG');
+        }
+    }
+
     render(){
         console.log(this.props);
         return(
@@ -66,11 +74,13 @@ class SubRedditCon extends React.Component{
                     <Grid item xs={3}>
                         <OptionComponent
                             correctSub={this.props.options[0]}
+                            onClick={this.handleClick.bind(this, this.props.options[0])}
                         />
                     </Grid>
                     <Grid item xs={3}>
                         <OptionComponent 
                             correctSub={this.props.options[1]}
+                            onClick={this.handleClick.bind(this, this.props.options[1])}
                         />
                     </Grid>
                     <Grid item xs={3}>
@@ -84,12 +94,14 @@ class SubRedditCon extends React.Component{
                     <Grid item xs={3}>
                         <OptionComponent                             
                             correctSub={this.props.options[2]}
+                            onClick={this.handleClick.bind(this, this.props.options[2])}
                         />
                     </Grid>
 
                     <Grid item xs={3}>
                         <OptionComponent                            
                             correctSub={this.props.options[3]}
+                            onClick={this.handleClick.bind(this, this.props.options[3])}
                         />
                     </Grid>
 
