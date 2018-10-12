@@ -4,6 +4,7 @@ import OptionComponent from './../components/optionComponent';
 import { connect } from 'react-redux';
 import * as actionCreators from './../actions/actions';
 import Grid from '@material-ui/core/Grid';
+import { Store } from 'react-redux';
 
 class SubRedditCon extends React.Component{
 
@@ -11,17 +12,33 @@ class SubRedditCon extends React.Component{
         super(props);
 
         this.props.fetchData();
+        
+        this.state = {
+            usedSubs: []
+        }
+
     }
 
     getRandomLocation = () => {
+    
         return Math.floor(Math.random() * Math.floor(4));
     }
 
     getRandomSubReddit = () => {
         let subreddits = ['aww', 'MadeMeSmile', 'pics', 'wellthatsucks','memes','gaming']
         let num = Math.floor(Math.random() * Math.floor(subreddits.length));
+        console.log(num);
+        let subreddit = subreddits[num];
         
-        return subreddits[num];
+        console.log(subreddit);
+        console.log(this.state.usedSubs);
+
+        if(this.state.usedSubs.includes(subreddit)){
+        }else{
+            this.state.usedSubs.push(subreddits[num]);
+            return subreddits[num];
+        }
+
     }
 
     render(){

@@ -1,9 +1,9 @@
-import { GET_IMAGE_FROM_SUB, GET_CORRECT_SUB } from '../actions/actions';
+import { GET_IMAGE_FROM_SUB, GET_CORRECT_SUB, GET_OPTIONS } from '../actions/actions';
 
 const initialState = {
   imageUrl: undefined,
   correctSub: undefined,
-  incorrectSubs: []
+  options: []
 }
 
 export default function subredditReducer(state=initialState, action) {
@@ -18,7 +18,13 @@ export default function subredditReducer(state=initialState, action) {
       return{
         ...state,
         correctSub: action.correctSub
-      } 
+      };
+
+    case GET_OPTIONS:
+      return{
+        ...state,
+        options: action.options
+      }
 
     //Always have a default
     default:
