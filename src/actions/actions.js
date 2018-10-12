@@ -57,22 +57,19 @@ export function GetImageFromSubFail(error){
     }
 }
 
-
-    //TODO
-    //1. Put the correct subreddit in a random location
-    //2. Only allow option of any subreddit
-
-export function GetSubredditOptions(correctSub){
-    
+export function GetSubredditOptions(correctSub){   
     let options = [];
     let correctPlace = Math.floor(Math.random() * Math.floor(4));
-
+    //Need to put the correct sub in the array so we don't get duplicates 
+    //of the correct sub
     usedSubs = [correctSub];
     
     let option1 = GetRandomSubreddit();
     let option2 = GetRandomSubreddit();
     let option3 = GetRandomSubreddit();
 
+    //Randomly places the correct subreddit in the options array...
+    //There has to be a better way to do this
     if(correctPlace === 0){
         options = [correctSub, option1, option2, option3];
     }else if (correctPlace === 1){
@@ -84,14 +81,14 @@ export function GetSubredditOptions(correctSub){
     }else{
         console.log('Placement error');
     }
-    console.log(correctPlace);
-    console.log(options);
-    console.log(usedSubs);
+
     return{
         type: 'GET_OPTIONS',
         options
     }
-}   
+}
+
+//Helper Functions
 
 function GetRandomSubreddit(){
     let ran = Math.floor(Math.random() * Math.floor(subreddits.length));

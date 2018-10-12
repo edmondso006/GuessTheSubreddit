@@ -12,20 +12,21 @@ class PictureComponent extends Component{
         
         return(
             <div className="imageCard">
+            <br />
+            <br />
                 <Card>
                     <CardContent>
-
-                        <CardMedia
-                            component="img"
-                            className="image"
-                            height="350"
-                            image={this.props.imageUrl}
-                            title="image"
-                        />
                         <Typography  variant="headline" component="h2">
-                            Guess the SubReddit!
+                            Question #1
                         </Typography>
                     </CardContent>
+                    <CardMedia
+                        component="img"
+                        className="image"
+                        height="350"
+                        src={this.props.imageUrl}
+                        title="image"                        
+                    />
                     
                 </Card>
             </div>

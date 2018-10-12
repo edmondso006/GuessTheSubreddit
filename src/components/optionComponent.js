@@ -8,10 +8,16 @@ class OptionComponent extends Component {
         super(props);
     }
 
+    handleClick = () =>{
+        //TODO
+        //Get the state from the store and see if the subreddit on this component is 
+        //the same as the correct subredit in the state
+    }
+
     render(){
         return(
             <div>
-                <Card>
+                <Card onClick={this.handleClick}>
                     <CardContent>
                         <Typography variant="headline" component="h2" className="optionText">
                             {this.props.correctSub}
