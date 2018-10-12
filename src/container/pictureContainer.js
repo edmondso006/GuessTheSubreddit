@@ -4,7 +4,6 @@ import OptionComponent from './../components/optionComponent';
 import { connect } from 'react-redux';
 import * as actionCreators from './../actions/actions';
 import Grid from '@material-ui/core/Grid';
-import { Store } from 'react-redux';
 
 class SubRedditCon extends React.Component{
 
@@ -16,7 +15,7 @@ class SubRedditCon extends React.Component{
         this.state = {
             usedSubs: []
         }
-
+ 
     }
 
     getRandomLocation = () => {
@@ -42,7 +41,7 @@ class SubRedditCon extends React.Component{
     }
 
     render(){
-
+        console.log(this.props);
         return(
             <div>
                 <Grid container spacing={8}>
@@ -66,12 +65,12 @@ class SubRedditCon extends React.Component{
 
                     <Grid item xs={3}>
                         <OptionComponent
-                            correctSub={this.getRandomLocation() === 0 ? this.props.correctSub : this.getRandomSubReddit()}
+                            correctSub={this.props.options[0]}
                         />
                     </Grid>
                     <Grid item xs={3}>
                         <OptionComponent 
-                            correctSub={this.getRandomLocation() === 1 ? this.props.correctSub : this.getRandomSubReddit()}
+                            correctSub={this.props.options[1]}
                         />
                     </Grid>
                     <Grid item xs={3}>
@@ -84,13 +83,13 @@ class SubRedditCon extends React.Component{
 
                     <Grid item xs={3}>
                         <OptionComponent                             
-                            correctSub={this.getRandomLocation() === 2 ? this.props.correctSub : this.getRandomSubReddit()}
+                            correctSub={this.props.options[2]}
                         />
                     </Grid>
 
                     <Grid item xs={3}>
                         <OptionComponent                            
-                            correctSub={this.getRandomLocation() === 3 ? this.props.correctSub : this.getRandomSubReddit()}
+                            correctSub={this.props.options[3]}
                         />
                     </Grid>
 
