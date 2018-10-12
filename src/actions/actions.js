@@ -4,6 +4,8 @@ export const GET_IMAGE_FROM_SUB = 'GET_IMAGE_FROM_SUB';
 export const GET_IMAGE_FROM_SUB_FAIL = 'GET_IMAGE_FROM_SUB_FAIL';
 export const GET_CORRECT_SUB = 'GET_CORRECT_SUB';
 export const GET_OPTIONS  = 'GET_OPTIONS';
+export const ADD_POINT = 'ADD_POINT';
+export const NEXT_QUESTION = 'NEXT_QUESTION';
 
 let subreddits = ['aww', 'MadeMeSmile', 'pics', 'Wellthatsucks','memes','gaming'];
 let usedSubs = [];
@@ -49,7 +51,6 @@ export function GetCorrectSub(subredit){
 }
 
 
-
 export function GetImageFromSubFail(error){
     return{
         type: 'GET_IMAGE_FROM_SUB_Fail',
@@ -88,8 +89,25 @@ export function GetSubredditOptions(correctSub){
     }
 }
 
-//Helper Functions
+export function NextQuestion(){
+    return {
+        type: 'NEXT_QUESTION'
+    }
+}
 
+
+export function AddPoint(){
+    return{
+        type: 'ADD_POINT',
+    }
+}
+
+
+
+
+
+
+//Helper Functions
 function GetRandomSubreddit(){
     let ran = Math.floor(Math.random() * Math.floor(subreddits.length));
     let subreddit = subreddits[ran];

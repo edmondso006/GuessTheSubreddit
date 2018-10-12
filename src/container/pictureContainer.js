@@ -42,7 +42,12 @@ class SubRedditCon extends React.Component{
 
     handleClick = (guess) => {
         if(guess === this.props.correctSub){
-            alert('CORRECT');
+            this.props.AddPoint();
+            //Show the next question
+            alert('correct');
+            this.props.NextQuestion();
+            this.props.fetchData();
+
         }else {
             alert('WRONG');
         }
@@ -58,11 +63,13 @@ class SubRedditCon extends React.Component{
                     
                     <Grid item xs={6}>
                         <PictureComponent 
-                            imageUrl={this.props.imageUrl === undefined  ? '' : this.props.imageUrl} 
+                            imageUrl={this.props.imageUrl === undefined  ? '' : this.props.imageUrl}
+                            questionNum = {this.props.question}
                         />
 
                     </Grid>
-                        <Grid item xs={3}>
+                    <Grid item xs={3}>
+                         <h2>Current Score:  {this.props.score}</h2>
                     </Grid>
             
                 </Grid>
@@ -108,7 +115,6 @@ class SubRedditCon extends React.Component{
                     <Grid item xs={3}>
                     </Grid>
                 </Grid> 
-                    
             </div>
         )
     }

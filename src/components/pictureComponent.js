@@ -17,7 +17,7 @@ class PictureComponent extends Component{
                 <Card>
                     <CardContent>
                         <Typography  variant="headline" component="h2">
-                            Question #1
+                            Question # {this.props.questionNum}
                         </Typography>
                     </CardContent>
                     <CardMedia

@@ -1,9 +1,11 @@
-import { GET_IMAGE_FROM_SUB, GET_CORRECT_SUB, GET_OPTIONS } from '../actions/actions';
+import { GET_IMAGE_FROM_SUB, GET_CORRECT_SUB, GET_OPTIONS, ADD_POINT, NEXT_QUESTION } from '../actions/actions';
 
 const initialState = {
   imageUrl: undefined,
   correctSub: undefined,
-  options: []
+  options: [],
+  score: 0,
+  question: 1
 }
 
 export default function subredditReducer(state=initialState, action) {
@@ -24,6 +26,18 @@ export default function subredditReducer(state=initialState, action) {
       return{
         ...state,
         options: action.options
+      }
+
+    case NEXT_QUESTION:
+      return{
+        ...state,
+        question: state.question + 1
+      }
+    
+    case ADD_POINT:
+      return{
+        ...state,
+        score: state.score + 1 
       }
 
     //Always have a default
