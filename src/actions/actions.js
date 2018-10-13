@@ -6,6 +6,7 @@ export const GET_CORRECT_SUB = 'GET_CORRECT_SUB';
 export const GET_OPTIONS  = 'GET_OPTIONS';
 export const ADD_POINT = 'ADD_POINT';
 export const NEXT_QUESTION = 'NEXT_QUESTION';
+export const GAME_OVER = 'GAME_OVER';
 
 let subreddits = ['aww', 'MadeMeSmile', 'pics', 'Wellthatsucks','memes','gaming'];
 let usedSubs = [];
@@ -103,8 +104,11 @@ export function AddPoint(){
 }
 
 
-
-
+export function GameOver(){
+    return{
+        type: 'GAME_OVER'
+    }
+}
 
 
 //Helper Functions

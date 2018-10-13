@@ -1,11 +1,12 @@
-import { GET_IMAGE_FROM_SUB, GET_CORRECT_SUB, GET_OPTIONS, ADD_POINT, NEXT_QUESTION } from '../actions/actions';
+import { GET_IMAGE_FROM_SUB, GET_CORRECT_SUB, GET_OPTIONS, ADD_POINT, NEXT_QUESTION, GAME_OVER} from '../actions/actions';
 
 const initialState = {
   imageUrl: undefined,
   correctSub: undefined,
   options: [],
   score: 0,
-  question: 1
+  question: 1,
+  gameOver: false
 }
 
 export default function subredditReducer(state=initialState, action) {
@@ -38,6 +39,12 @@ export default function subredditReducer(state=initialState, action) {
       return{
         ...state,
         score: state.score + 1 
+      }
+
+    case GAME_OVER:
+      return{
+        ...state,
+        gameOver: true
       }
 
     //Always have a default
