@@ -1,4 +1,4 @@
-import { START_GAME, GET_IMAGE_FROM_SUB, GET_CORRECT_SUB, GET_OPTIONS, ADD_POINT, NEXT_QUESTION, GAME_OVER} from '../actions/actions';
+import { START_GAME, RESET_GAME, GET_IMAGE_FROM_SUB, GET_CORRECT_SUB, GET_OPTIONS, ADD_POINT, NEXT_QUESTION, GAME_OVER} from '../actions/actions';
 
 const initialState = {
   startGame: false,
@@ -19,6 +19,14 @@ export default function subredditReducer(state=initialState, action) {
         startGame: true
       }
 
+    case RESET_GAME:
+      return{
+        ...state,
+        startGame: false,
+        score: 0,
+        question: 1,
+        gameOver: false
+      }
 
     case GET_IMAGE_FROM_SUB:
       return {

@@ -18,7 +18,7 @@ class PictureComponent extends Component{
                 <br />
                 <Card>
                     <CardContent>
-                        <Typography gutterBottom color="textSecondary" variant="h1">
+                        <Typography gutterBottom color="textSecondary" variant="title">
                             Question #{this.props.questionNum}
                         </Typography>
                     </CardContent>

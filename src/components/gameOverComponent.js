@@ -18,16 +18,16 @@ class GameOverComponent extends Component {
                         
                         <Card>
                             <CardContent>
-                                <Typography gutterBottom variant="h1" component="h1">
+                                <Typography gutterBottom variant="headline" >
                                     Game Over!
                                 </Typography>
-                                <Typography gutterBottom variant="h3" component="h3">
+                                <Typography gutterBottom variant="subheading" >
                                     Score: {this.props.score}
                                 </Typography>
                             </CardContent>
 
                             <CardActions>
-                                <Button size="large" color="primary">
+                                <Button size="large" color="primary" onClick={this.props.reset}>
                                     Play Again
                                 </Button>
                                 <Button size="large" color="primary">

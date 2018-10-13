@@ -24,7 +24,7 @@ class StartGameComponent extends Component {
                                     <br />
                                     <br />
                                     <br />
-                                    <Typography gutterBottom variant="h5" component="h2">
+                                    <Typography gutterBottom variant="title" component="h2">
                                         Guess The Subreddit!
                                     </Typography>
                                 </center>   

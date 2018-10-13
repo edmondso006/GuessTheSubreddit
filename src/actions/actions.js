@@ -8,6 +8,7 @@ export const GET_OPTIONS  = 'GET_OPTIONS';
 export const ADD_POINT = 'ADD_POINT';
 export const NEXT_QUESTION = 'NEXT_QUESTION';
 export const GAME_OVER = 'GAME_OVER';
+export const RESET_GAME = 'RESET_GAME';
 
 let subreddits = ['aww', 'MadeMeSmile', 'pics', 'Wellthatsucks','memes','gaming'];
 let usedSubs = [];
@@ -15,6 +16,12 @@ let usedSubs = [];
 export function StartGame(){
     return {
         type: 'START_GAME'
+    }
+}
+
+export function ResetGame(){
+    return {
+        type: 'RESET_GAME'
     }
 }
 
@@ -55,14 +62,6 @@ export function GetCorrectSub(subredit){
     return{
         type: 'GET_CORRECT_SUB',
         correctSub: subredit
-    }
-}
-
-
-export function GetImageFromSubFail(error){
-    return{
-        type: 'GET_IMAGE_FROM_SUB_Fail',
-        error
     }
 }
 

@@ -118,7 +118,7 @@ class SubRedditCon extends React.Component{
                 ): null}
 
                  {/* Game over component */}
-                 {this.props.gameOver === true ? (<GameOverComponent score={this.props.score}/>) : ''}
+                 {this.props.gameOver === true ? (<GameOverComponent score={this.props.score} reset={this.props.ResetGame}/>) : ''}
                  
             </div>
         )
