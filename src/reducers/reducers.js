@@ -1,6 +1,7 @@
 import { GET_IMAGE_FROM_SUB, GET_CORRECT_SUB, GET_OPTIONS, ADD_POINT, NEXT_QUESTION, GAME_OVER} from '../actions/actions';
 
 const initialState = {
+  startGame: false,
   imageUrl: undefined,
   correctSub: undefined,
   options: [],

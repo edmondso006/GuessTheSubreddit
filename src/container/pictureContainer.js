@@ -2,6 +2,7 @@ import React from 'react';
 import PictureComponent from './../components/pictureComponent';
 import OptionComponent from './../components/optionComponent';
 import GameOverComponent from './../components/gameOverComponent';
+import StartGameComponent from './../components/startGameComponent';
 import { connect } from 'react-redux';
 import * as actionCreators from './../actions/actions';
 import Grid from '@material-ui/core/Grid';
@@ -47,7 +48,9 @@ class SubRedditCon extends React.Component{
     render(){
         return(
             <div>
-            
+                {/*Start Game component*/}
+                <StartGameComponent />
+
                  {/* Game over component */}
                  {this.props.gameOver === true ? (<GameOverComponent score={this.props.score}/>) : (
                     <div>
