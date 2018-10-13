@@ -38,7 +38,7 @@ class StartGameComponent extends Component {
 
 
                                 <center>
-                                    <Button size="large" color="primary">
+                                    <Button size="large" color="primary" variant="contained" onClick={this.props.StartGame}>
                                         Start the Game!
                                     </Button>
                                 </center>

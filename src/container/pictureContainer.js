@@ -49,10 +49,10 @@ class SubRedditCon extends React.Component{
         return(
             <div>
                 {/*Start Game component*/}
-                <StartGameComponent />
+                {this.props.startGame === false ? <StartGameComponent StartGame={this.props.StartGame}/> : null}
 
-                 {/* Game over component */}
-                 {this.props.gameOver === true ? (<GameOverComponent score={this.props.score}/>) : (
+                {/* Currently Playing the game */}
+                {this.props.startGame === true && this.props.gameOver !== true ? (
                     <div>
                         <Grid container spacing={8}>
                     
@@ -115,7 +115,11 @@ class SubRedditCon extends React.Component{
                     
                     </Grid> 
                 </div>
-                )}
+                ): null}
+
+                 {/* Game over component */}
+                 {this.props.gameOver === true ? (<GameOverComponent score={this.props.score}/>) : ''}
+                 
             </div>
         )
     }

@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+export const START_GAME = 'START_GAME';
 export const GET_IMAGE_FROM_SUB = 'GET_IMAGE_FROM_SUB';
 export const GET_IMAGE_FROM_SUB_FAIL = 'GET_IMAGE_FROM_SUB_FAIL';
 export const GET_CORRECT_SUB = 'GET_CORRECT_SUB';
@@ -10,6 +11,12 @@ export const GAME_OVER = 'GAME_OVER';
 
 let subreddits = ['aww', 'MadeMeSmile', 'pics', 'Wellthatsucks','memes','gaming'];
 let usedSubs = [];
+
+export function StartGame(){
+    return {
+        type: 'START_GAME'
+    }
+}
 
 export function fetchData(){
     let ran = randomNumber();

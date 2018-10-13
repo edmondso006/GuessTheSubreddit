@@ -14,8 +14,8 @@ class PictureComponent extends Component{
         
         return(
             <div className="imageCard">
-            <br />
-            <br />
+                <br />
+                <br />
                 <Card>
                     <CardContent>
                         <Typography gutterBottom color="textSecondary" variant="h1">
